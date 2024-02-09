@@ -12,6 +12,8 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 try:
     my_list = load_from_json_file(filename)
+    for i in range(1, len(sys.argv)):
+        list.append(sys.argv[i])
 except Exception:
     my_list = []
     for i in range(1, len(sys.argv)):
