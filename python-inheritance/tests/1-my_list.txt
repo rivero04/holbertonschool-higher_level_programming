@@ -1,0 +1,79 @@
+>>> MyList = __import__('1-my_list').MyList
+
+
+>>> my_list = MyList([1, 4, 2, 3, 5])
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+
+>>> my_list = MyList([15, -4, 2, 35])
+>>> my_list.print_sorted()
+[-4, 2, 15, 35]
+
+
+>>> my_list = MyList([5, 5, 5, 5])
+>>> my_list.print_sorted()
+[5, 5, 5, 5]
+
+
+>>> my_list = MyList([1, 2, 3, 4])
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+...
+NameError: name 'my_list2' is not defined
+
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+
+>>> my_list = MyList([-2, 3, 0, -5])
+>>> my_list.print_sorted()
+[-5, -2, 0, 3]
+
+>>> my_list = MyList([-2, -3, -10, -5])
+>>> my_list.print_sorted()
+[-10, -5, -3, -2]
+
+>>> my_list = [1, 2, 3]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+AttributeError: 'list' object has no attribute 'print_sorted'
+
+
+>>> my_list = MyList([5])
+>>> my_list.print_sorted()
+[5]
+
+
+>>> my_list = MyList("nacho")
+>>> my_list.print_sorted()
+['a', 'c', 'h', 'n', 'o']
