@@ -3,13 +3,16 @@
 
 
 class Base:
-
+    """
+    Manages id attribute for future classes.
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
         Assigns id if provided, else increments __nb_objects.
         """
+
         if id is not None:
             self.id = id
         else:
