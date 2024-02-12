@@ -86,6 +86,9 @@ class Rectangle(Base):
                 .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args):
+        """
+        Updates attributes in the order of id, width, height, x, y.
+        """
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
