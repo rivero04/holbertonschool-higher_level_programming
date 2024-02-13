@@ -15,6 +15,20 @@ class Square(Rectangle):
         Constructor of the Square class.
         """
         super().__init__(size, size, x, y, id)
+        
+    @property
+    def size(self):
+        """
+        Getter for the size of the Square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for the size of the Square.
+        """
+        self.width = self.height = value
 
     def __str__(self):
         """
@@ -22,27 +36,3 @@ class Square(Rectangle):
         """
         return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y, self.width))
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, width):
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, height):
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = height
