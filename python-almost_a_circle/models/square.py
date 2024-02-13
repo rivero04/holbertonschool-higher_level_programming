@@ -15,7 +15,7 @@ class Square(Rectangle):
         Constructor of the Square class.
         """
         super().__init__(size, size, x, y, id)
-        
+
     @property
     def size(self):
         """
