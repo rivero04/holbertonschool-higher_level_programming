@@ -4,6 +4,7 @@
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -93,3 +94,33 @@ class Base:
             instance = cls.create(**dict_obj)
             instances.append(instance)
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Opens a window and draws all the Rectangles and Squares.
+        """
+        window = turtle.Screen()
+        window.bgcolor("white")
+
+        draw_turtle = turtle.Turtle()
+
+        for rectangle in list_rectangles:
+            draw_turtle.penup()
+            draw_turtle.goto(rectangle.x, rectangle.y)
+            draw_turtle.pendown()
+            draw_turtle.color("red")
+            for _ in range(2):
+                draw_turtle.forward(rectangle.width)
+                draw_turtle.right(90)
+                draw_turtle.forward(rectangle.height)
+                draw_turtle.right(90)
+
+        for square in list_squares:
+            draw_turtle.penup()
+            draw_turtle.goto(square.x, square.y)
+            draw_turtle.pendown()
+            draw_turtle.color("blue")
+            for _ in range(4):
+                draw_turtle.forward(square.size)
+                draw_turtle.right(90)
