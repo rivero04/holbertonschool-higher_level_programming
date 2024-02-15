@@ -1,9 +1,13 @@
+"""Defines unittests for base.py."""
 import unittest
 import os
 import json
 from models import Base
 
 class TestBase(unittest.TestCase):
+    """
+    Unittests for testing instantiation of the Base class.
+    """
     def setUp(self):
         Base._Base__nb_objects = 0
 
