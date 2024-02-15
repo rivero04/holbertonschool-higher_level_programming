@@ -1,6 +1,7 @@
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
@@ -49,6 +50,7 @@ class TestBase(unittest.TestCase):
         bases = Base.load_from_file()
         self.assertEqual(bases[0].id, b1.id)
         self.assertNotEqual(bases[0], b1)
+
 
 if __name__ == "__main__":
     unittest.main()
