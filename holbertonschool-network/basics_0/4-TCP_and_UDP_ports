@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo netstat -l
+sudo netstat -p
