@@ -22,10 +22,11 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM cities WHERE state_id = \
-            (SELECT id FROM states WHERE name = %s) \
-            ORDER BY cities.id ASC", (state_name,))
+    cursor.execute("SELECT * FROM cities \
+                JOIN states ON cities.state_id = states.id \
+                WHERE states.name = %s \
+                ORDER BY cities.id ASC", (state_name,))
 
-# Uso de fetchall para recuperar los registros restantes q quedaron en cursor
+    # Uso de fetchall para recuperar los registros restantes q quedaron en cursor
     for row in cursor.fetchall():
         print(row)
