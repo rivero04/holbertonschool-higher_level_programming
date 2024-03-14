@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all states from the `hbtn_0e_0_usa` database
-with names starting with 'N', ordered by id.
+Lists all states from the `hbtn_0e_0_usa` database where 
+the name matches the provided argument, ordered by id.
 """
 
 import MySQLdb
