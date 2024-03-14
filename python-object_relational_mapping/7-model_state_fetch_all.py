@@ -18,11 +18,11 @@ if __name__ == "__main__":
     db_name = argv[3]
 
     engine = create_engine(
-        f'mysql+mysqlconnector://{user}:{password}@localhost:3306/{db_name}')
+        f"mysql+mysqlconnector://{user}:{password}@localhost:3306/{db_name}")
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
     states = session.query(State).order_by(State.id).all()
     for state in states:
-        print('{0}: {1}'.format(state.id, state.name))
+        print(f"{state.id}: {state.name}")
