@@ -9,7 +9,7 @@ from sys import argv
 
 if __name__ == '__main__':
     """
-    Access the database and get the status
+    Access the database and get the states
     from the database.
     """
 
@@ -24,6 +24,6 @@ if __name__ == '__main__':
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                     ORDER BY states.id ASC")
 
-# uso fetchall para recuperar los registros restantes que quedaron en cursor
+    # uso fetchall para recuperar los registros restantes que quedaron en cursor
     for row in cursor.fetchall():
         print(row)

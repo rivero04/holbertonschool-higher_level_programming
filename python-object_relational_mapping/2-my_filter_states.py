@@ -24,8 +24,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE name LIKE BINARY %s \
             ORDER BY states.id ASC"
-    cursor.execute(query, (state_name))
-
+    cursor.execute(query, (state_name,))
 
 # uso fetchall para recuperar los registros restantes que quedaron en cursor
     for row in cursor.fetchall():
