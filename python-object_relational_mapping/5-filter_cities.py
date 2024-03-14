@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all cities from a specified state in the 
+Lists all cities from a specified state in the
 `hbtn_0e_4_usa` database, ordered by id.
 """
 
@@ -22,9 +22,11 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM cities WHERE state_id = \
-        (SELECT id FROM states WHERE name = %s) \
-        ORDER BY cities.id ASC", (state_name,))
+    cursor.execute(""""SELECT cities.name
+          FROM states
+          INNER JOIN cities ON states.id = cities.state_id
+          WHERE states.name = %s
+          ORDER BY cities.id ASC""", (state_name,))
 
 # Uso de fetchall para recuperar los registros restantes q quedaron en cursor
     for row in cursor.fetchall():
