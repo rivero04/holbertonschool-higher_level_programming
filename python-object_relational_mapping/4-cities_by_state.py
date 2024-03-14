@@ -20,11 +20,9 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM cities \
-         JOIN states ON cities.state_id = states.id \
-         ORDER BY cities.id ASC")
+    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
 
 # Uso de fetchall para recuperar los registros restantes q quedaron en cursor
     if cursor.fetchall() is not None:
-        for row in cursor.fetchall():
+        for row in rows:
             print(row)
