@@ -24,6 +24,6 @@ if __name__ == '__main__':
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                     ORDER BY states.id ASC")
 
-    # uso fetchall para recuperar los registros restantes que quedaron en cursor
+    # uso fetchall para recuperar los registros restantes q quedaron en cursor
     for row in cursor.fetchall():
         print(row)
