@@ -17,9 +17,8 @@ if __name__ == "__main__":
     password = argv[2]
     db_name = argv[3]
 
-    engine = create_engine(
-        "mysql+mysqlconnector://{}:{}@localhost:3306/{}".format(
-            user, password, db_name))
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(argv[1], argv[2], argv[3]))
 
     Session = sessionmaker(bind=engine)
     session = Session()
