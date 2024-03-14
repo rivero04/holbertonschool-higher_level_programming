@@ -22,7 +22,7 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
     cursor.execute(query, (state_name,))
   
 
