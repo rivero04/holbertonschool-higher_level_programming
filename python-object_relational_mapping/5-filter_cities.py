@@ -29,5 +29,4 @@ if __name__ == '__main__':
           ORDER BY cities.id ASC""", (state_name,))
 
 # Uso de fetchall para recuperar los registros restantes q quedaron en cursor
-    if cursor.fetchall():
-        print(", ".join([row[0] for row in cursor.fetchall()]))
+    print(", ".join([row[0] for row in cursor.fetchall()]))
