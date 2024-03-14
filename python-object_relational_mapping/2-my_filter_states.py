@@ -22,9 +22,8 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s \
-            ORDER BY states.id ASC"
-    cursor.execute(query, (state_name,))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' \
+        ORDER BY states.id ASC".format(argv[4]))
 
     # uso fetchall para recuperar los registros restantes q quedaron en cursor
     for row in cursor.fetchall():
