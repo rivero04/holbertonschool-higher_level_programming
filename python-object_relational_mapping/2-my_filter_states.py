@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states from the `hbtn_0e_0_usa` database where 
+Lists all states from the `hbtn_0e_0_usa` database where
 the name matches the provided argument, ordered by id.
 """
 
@@ -22,9 +22,10 @@ if __name__ == '__main__':
                          user=user, passwd=password, db=db_name)
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY %s \
+            ORDER BY states.id ASC"
     cursor.execute(query, (state_name,))
-  
+
 
 # uso fetchall para recuperar los registros restantes que quedaron en cursor
     for row in cursor.fetchall():
