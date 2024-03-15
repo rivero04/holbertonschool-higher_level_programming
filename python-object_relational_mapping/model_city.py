@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+"""
+    This module contains a Base class
+"""
+
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
 from model_state import Base
 
 
 class City(Base):
+    """
+    City class inherits the Base class
+    """
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False
