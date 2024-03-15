@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that prints the first State object 
+script that prints the first State object
 from the database hbtn_0e_6_usa
 """
 
@@ -24,9 +24,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    first_state = session.query(State).order_by(State.id).first()
+    first_state = session.query(State).first()
 
-    if states is None:
+    if first_state is None:
         print("Nothing")
     else:
-        print("{}: {}".format(first_state.id, first_state.name))
+        print(first_state.id, first_state.name, sep=": ")
