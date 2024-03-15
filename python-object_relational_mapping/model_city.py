@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This module contains a Base class.
+This module contains a Base class.
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
