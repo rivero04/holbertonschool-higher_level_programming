@@ -7,6 +7,7 @@ from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+from model_city import City
 
 if __name__ == "__main__":
     """
